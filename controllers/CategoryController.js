@@ -20,7 +20,11 @@ const CategoryCreate = async (req, res) => {
 // Read All - GET
 const CategoryGetAll = async (req, res) => {
     try {
-        const categories = await prisma.category.findMany();
+        const categories = await prisma.category.findMany({
+            include: {
+                products: true,
+            },
+        });
         return res.status(200).json(categories);
     } catch (error) {
         return res.status(500).json({ message: error.message });

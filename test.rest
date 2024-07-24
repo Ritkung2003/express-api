@@ -35,3 +35,19 @@ Content-Type: application/json
 
 DELETE  http://127.0.0.1:5000/category/deletebyid/1
 
+#### get all products
+
+Get http://127.0.0.1:5000/products/getall
+
+
+###################### User
+#### Signup
+
+POST http://127.0.0.1:5000/auth/signup
+Content-Type: application/json
+
+{
+    "username": "warit",
+    "email": "warit@gmail.com",
+    "password": "123456"
+}
